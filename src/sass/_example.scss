@@ -1,28 +1,141 @@
-.example {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
-    Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-  line-height: 1.5;
-  background-color: #fff;
-  color: #2f2f37;
-  max-width: 960px;
-  padding: 16px;
+// .example {
+//   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
+//     Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+//   line-height: 1.5;
+//   background-color: #fff;
+//   color: #2f2f37;
+//   max-width: 960px;
+//   padding: 16px;
+// }
+
+// .example code {
+//   font-family: monospace;
+//   font-size: 16px;
+//   font-weight: 700;
+//   background-color: #ff6b0a;
+//   color: #fff;
+//   padding: 2px 6px;
+//   border-radius: 2px;
+// }
+
+// .example .background {
+//   height: 240px;
+//   // ❗️❗️❗️ The path to images from a SASS file
+//   // is always the same as from the css folder.
+//   background-image: url('../images/logo.png');
+//   background-size: cover;
+//   background-position: center;
+// }
+
+body {
+  font-family: 'Dancing Script', cursive;
+  
 }
 
-.example code {
-  font-family: monospace;
-  font-size: 16px;
-  font-weight: 700;
-  background-color: #ff6b0a;
-  color: #fff;
-  padding: 2px 6px;
-  border-radius: 2px;
+.cat-info {
+  font-size: 30px;
+  display: flex;
+  margin-top: 15px;
 }
 
-.example .background {
-  height: 240px;
-  // ❗️❗️❗️ The path to images from a SASS file
-  // is always the same as from the css folder.
-  background-image: url('../images/logo.png');
-  background-size: cover;
-  background-position: center;
+@keyframes changeWrap {
+  0% {
+    opacity: 0%;
+    scale: 0.5;
+  }
+
+  100% {
+    opacity: 100%;
+    scale: 1;
+  }
 }
+
+;
+
+@keyframes imgChange {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+img {
+  animation: imgChange 450ms linear;
+  margin-left: 20px;
+  border: 3px solid teal;
+  width: 600px;
+  height: 600px;
+  border-radius: 10px;
+}
+
+.breed-select {
+  margin-left: 20px;
+  font-size: 25px;
+  background-color: aquamarine;
+  font-family: 'Dancing Script', cursive;
+  border-color: transparent;
+}
+
+.wrap {
+  animation: changeWrap 0.5s linear;
+  margin-left: 15px;
+  width: 1000px;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  font-size: 70px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+
+.loader {
+  width: 48px;
+  height: 48px;
+  border-width: 3px;
+  border-style: dashed solid solid dotted;
+  border-color: #FF3D00 #FF3D00 transparent #FF3D00;
+  border-radius: 50%;
+  display: inline-block;
+  position: absolute;
+  bottom: 50%;
+  left: 50%;
+  box-sizing: border-box;
+  animation: rotation 1s linear infinite;
+}
+
+.loader::after {
+  content: '';
+  box-sizing: border-box;
+  position: absolute;
+  left: 20px;
+  top: 31px;
+  border: 10px solid transparent;
+  border-right-color: #FF3D00;
+  transform: rotate(-40deg);
+}
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.is-hidden {
+  display: none;
+}
+
+;
